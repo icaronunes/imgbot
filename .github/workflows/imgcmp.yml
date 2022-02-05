@@ -1,12 +1,11 @@
 name: imgcmp
-on:
-  schedule:
-    - cron: "0 0 * * 1" # Weekly build
+on: pull_request
 jobs:
-  imgcmp:
-    runs-on: ubuntu-latest
+  build:
+    name: imgcmp
+    runs-on: ubuntu-latest    
     steps:
-      - uses: 9sako6/imgcmp@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          IGNORED_FILES: "done"
+    - uses: 9sako6/imgcmp@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        IGNORED_FILES: "done/"
