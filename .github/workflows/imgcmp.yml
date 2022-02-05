@@ -9,7 +9,7 @@ jobs:
     name: imgcmp
     runs-on: ubuntu-latest    
     steps:
-    - uses: 9sako6/imgcmp@1.0.0
+    - uses: 9sako6/imgcmp@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        IGNORED_FILES: "done/"
+        IGNORED_FILES: "public/*"
